@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start School Chatbot",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Backend Server",
+			"type": "shell",
+			"command": "cd backend && node server.js",
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Restart School Chatbot",
+			"type": "shell",
+			"command": "concurrently \"cd frontend && npm start\" \"cd backend && npm start\"",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Restart School Chatbot",
+			"type": "shell",
+			"command": "concurrently \"cd frontend; npm start\" \"cd backend; npm start\"",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start School Chatbot",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

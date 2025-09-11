@@ -1,0 +1,61 @@
+{
+  "name": "osmena-colleges-chatbot",
+  "version": "2.0.0",
+  "description": "An AI-powered web-based chatbot for Osmeña Colleges information and assistance with Google Gemini integration - Enhanced with Auto-Sync Portable Deployment",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "setup": "node setup.js",
+    "prepare-laptop": "node create_package.js",
+    "start": "npm run dev",
+    "create-portable": "node package-manager.js",
+    "sync-auto": "node -e \"const PackageManager = require('./package-manager.js'); const pm = new PackageManager(); pm.startAutoSync();\"",
+    "package-menu": "node package-manager.js",
+    "auto-sync": ".\\auto-sync-portable.bat",
+    "clean": "rimraf frontend/node_modules backend/node_modules frontend/build",
+    "reset": "npm run clean && npm run install-all"
+  },
+  "keywords": [
+    "chatbot",
+    "osmena-colleges",
+    "education",
+    "react",
+    "nodejs",
+    "gemini",
+    "ai",
+    "google-ai",
+    "portable",
+    "auto-sync"
+  ],
+  "author": "Osmeña Colleges IT Team",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "rimraf": "^5.0.10"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "config": {
+    "portable": {
+      "autoSync": true,
+      "syncDelay": 2000,
+      "excludePatterns": [
+        "node_modules",
+        ".git",
+        "logs",
+        "*.log",
+        ".env"
+      ]
+    }
+  }
+}

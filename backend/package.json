@@ -1,0 +1,31 @@
+{
+  "name": "osmena-colleges-chatbot-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Osmeña Colleges chatbot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@types/react-speech-recognition": "^3.9.6",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mammoth": "^1.10.0",
+    "multer": "^2.0.2",
+    "openai": "^4.20.1",
+    "pdf-parse": "^1.1.1",
+    "react-speech-recognition": "^4.0.1",
+    "socket.io": "^4.7.4",
+    "sqlite3": "^5.1.7",
+    "validator": "^13.15.15",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

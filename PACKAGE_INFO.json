@@ -1,0 +1,26 @@
+{
+  "name": "Osmeña Colleges Chatbot",
+  "version": "1.0.0",
+  "description": "Complete portable school chatbot with AI integration",
+  "created": "2025-09-06T14:01:29.000Z",
+  "requirements": {
+    "nodejs": "16.0.0 or higher",
+    "npm": "6.0.0 or higher",
+    "os": "Windows, macOS, Linux"
+  },
+  "features": [
+    "Real-time chat interface",
+    "School information database",
+    "File upload and analysis",
+    "Text-to-speech functionality",
+    "Staff directory with photos",
+    "AI integration (Gemini API)",
+    "Responsive design",
+    "No configuration required"
+  ],
+  "installation": {
+    "windows": "Double-click START_CHATBOT.bat",
+    "manual": "Run 'node setup.js' then 'npm run dev'",
+    "url": "http://localhost:3000"
+  }
+}

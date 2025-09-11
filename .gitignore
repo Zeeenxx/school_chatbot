@@ -1,0 +1,14 @@
+# Only ignore these in the portable package
+.git/
+*.log
+.DS_Store
+Thumbs.db
+
+# Keep node_modules in the package for offline installation
+# node_modules/
+
+# Keep all uploads and staff images
+# uploads/
+
+# Keep environment file template
+# backend/.env
