@@ -1071,7 +1071,7 @@ const ChatBot: React.FC = () => {
 
     if (isImage) {
       // Add to uploaded images for preview with mobile-compatible URL
-      const serverUrl = process.env.REACT_APP_SERVER_URL || 
+      const serverUrl = process.env.REACT_APP_API_URL || 
                        `http://${window.location.hostname}:5000`;
       const imageWithPreview = {
         ...fileInfo.file,
