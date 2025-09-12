@@ -1,14 +1,27 @@
-# Only ignore these in the portable package
-.git/
-*.log
-.DS_Store
-Thumbs.db
+# Dependencies
+/node_modules
+/frontend/node_modules
+/backend/node_modules
 
-# Keep node_modules in the package for offline installation
-# node_modules/
+# Production
+/frontend/build
 
-# Keep all uploads and staff images
-# uploads/
+# Logs
+/backend/logs/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Keep environment file template
-# backend/.env
+# Environment variables
+.env
+backend/.env
+
+# Database
+backend/database/chatbot.db
+
+# Ngrok configuration
+ngrok.yml
+
+# IDE specific
+.cursor-settings.json
+.vscode/

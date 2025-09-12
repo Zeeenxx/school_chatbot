@@ -1,5 +1,12 @@
 const express = require('express');
 const router = express.Router();
+
+// DIAGNOSTIC: Log requests reaching the auth router
+router.use((req, res, next) => {
+  console.log(`[DIAGNOSTIC AUTH] Request received by auth router: ${req.method} ${req.originalUrl}`);
+  next();
+});
+
 const { 
   registerUser, 
   loginUser, 

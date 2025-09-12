@@ -33,10 +33,29 @@ const model = genAI ? genAI.getGenerativeModel({ model: "gemini-1.5-flash" }) : 
 
 const app = express();
 const server = createServer(app);
+
+// Define allowed origins
+const allowedOrigins = [
+  "http://localhost:3000", 
+  "http://192.168.1.235:3000", 
+  "http://192.168.56.1:3000", 
+  /https:\/\/[a-zA-Z0-9-]+\.ngrok-free\.app$/, // Wildcard for any ngrok URL
+  // Add Netlify's deploy preview URL pattern
+  /https:\/\/--[a-zA-Z0-9-]+\.netlify\.app$/, 
+];
+
+// Add production frontend URL from environment variable if it exists
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
+
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://192.168.1.235:3000", "http://192.168.56.1:3000"],
-    methods: ["GET", "POST"]
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
   },
   // Add timeout and connection configurations for mobile devices
   pingTimeout: 60000, // 60 seconds
@@ -51,11 +70,14 @@ const PORT = process.env.PORT || 5000;
 app.use(securityHeaders); // Security headers first
 app.use(requestLogger); // Request logging
 app.use(cors({
-  origin: ["http://localhost:3000", "http://192.168.1.235:3000", "http://192.168.56.1:3000"],
-  credentials: true
+  origin: allowedOrigins,
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json({ limit: '10mb' })); // Limit JSON payload size
 app.use(sanitizeInput); // Sanitize all inputs
+
+// Remove diagnostic logging for production
 
 // Health check endpoint for mobile testing
 app.get('/api/health', (req, res) => {
