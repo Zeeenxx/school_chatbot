@@ -42,6 +42,8 @@ const allowedOrigins = [
   /https:\/\/[a-zA-Z0-9-]+\.ngrok-free\.app$/, // Wildcard for any ngrok URL
   // Add Netlify's deploy preview URL pattern
   /https:\/\/--[a-zA-Z0-9-]+\.netlify\.app$/, 
+  // Add Netlify's main domain pattern
+  /https:\/\/[a-zA-Z0-9-]+\.netlify\.app$/,
 ];
 
 // Add production frontend URL from environment variable if it exists
