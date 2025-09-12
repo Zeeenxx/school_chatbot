@@ -1,0 +1,21 @@
+# Video Background Placeholder
+
+## To complete the video background setup:
+
+1. **Add your video file** as `background-video.mp4` in this directory
+2. **Add a fallback image** as `default-bg.jpg` in this directory
+
+## Current Status:
+- ✅ Video background component created
+- ✅ App.tsx updated to use video background
+- ⏳ Waiting for video file: `background-video.mp4`
+- ⏳ Waiting for fallback image: `default-bg.jpg`
+
+## Quick Test:
+Once you add the files, the video background will automatically work!
+
+## File Requirements:
+- **Video**: MP4 format, under 10MB, 10-30 seconds duration
+- **Image**: JPG/PNG format, 1920x1080 recommended
+
+See VIDEO-BACKGROUND-GUIDE.md for detailed instructions.
