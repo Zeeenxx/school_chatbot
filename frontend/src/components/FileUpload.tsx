@@ -174,8 +174,8 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileUploaded, clearFiles, rem
       const formData = new FormData();
       formData.append('file', file);
 
-      // Use environment variable or detect current host for mobile compatibility
-      const serverUrl = process.env.REACT_APP_SERVER_URL || 
+      // Use environment variable for backend URL in production, or localhost in development
+      const serverUrl = process.env.REACT_APP_API_URL || 
                        `http://${window.location.hostname}:5000`;
       const uploadUrl = `${serverUrl}/api/upload`;
 
