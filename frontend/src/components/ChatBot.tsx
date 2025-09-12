@@ -959,8 +959,8 @@ const ChatBot: React.FC = () => {
   };
 
   useEffect(() => {
-    // Use environment variable or detect current host for mobile compatibility
-    const serverUrl = process.env.REACT_APP_SERVER_URL || 
+    // Use environment variable for backend URL in production, or localhost in development
+    const serverUrl = process.env.REACT_APP_API_URL || 
                      `http://${window.location.hostname}:5000`;
     
     // Enhanced socket configuration for mobile devices
