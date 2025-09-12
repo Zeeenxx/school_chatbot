@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 interface FileUploadProps {
   onFileUploaded: (fileInfo: any) => void;
-  clearFiles?: boolean; // Add prop to trigger clearing files
+  clearFiles?: number; // Add prop to trigger clearing files (counter)
   removedFilename?: string; // Add prop to specify which file was removed
 }
 
@@ -120,9 +120,9 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileUploaded, clearFiles, rem
   const [uploadedFile, setUploadedFile] = useState<any>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Clear uploaded file when clearFiles prop changes
+  // Clear uploaded file when clearFiles prop changes (counter-based)
   useEffect(() => {
-    if (clearFiles) {
+    if (clearFiles && clearFiles > 0) {
       setUploadedFile(null);
       if (fileInputRef.current) {
         fileInputRef.current.value = '';

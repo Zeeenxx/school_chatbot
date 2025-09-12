@@ -891,7 +891,7 @@ const ChatBot: React.FC = () => {
   const [selectedImages, setSelectedImages] = useState<any[]>([]);
   const [uploadedFiles, setUploadedFiles] = useState<any[]>([]);
   const [selectedFiles, setSelectedFiles] = useState<any[]>([]);
-  const [clearFileUpload, setClearFileUpload] = useState(false);
+  const [clearFileUpload, setClearFileUpload] = useState(0);
   const [removedFilename, setRemovedFilename] = useState<string>('');
 
   const {
@@ -1045,8 +1045,7 @@ const ChatBot: React.FC = () => {
     }
     
     // Clear the FileUpload component's displayed file
-    setClearFileUpload(true);
-    setTimeout(() => setClearFileUpload(false), 100); // Reset after clearing
+    setClearFileUpload(prev => prev + 1);
     
     // Reset transcript after sending message
     if (browserSupportsSpeechRecognition) {
@@ -1119,7 +1118,7 @@ const ChatBot: React.FC = () => {
     setSelectedImages(prev => prev.filter(img => img.id !== imageId));
     
     // Trigger clearFiles to clear the FileUpload component state
-    setClearFileUpload(prev => !prev);
+    setClearFileUpload(prev => prev + 1);
   };
 
   const toggleFileSelection = (fileId: number) => {
@@ -1148,7 +1147,7 @@ const ChatBot: React.FC = () => {
     setSelectedFiles(prev => prev.filter(file => file.id !== fileId));
     
     // Trigger clearFiles to clear the FileUpload component state
-    setClearFileUpload(prev => !prev);
+    setClearFileUpload(prev => prev + 1);
   };
 
   const deleteFileFromServer = async (filename: string) => {
