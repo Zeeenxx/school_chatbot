@@ -38,8 +38,8 @@ interface CmsData {
 
 class ApiService {
   private getBaseURL(): string {
-    // Use same origin for all requests - proxy will handle routing to backend
-    return window.location.origin;
+    // Use environment variable for backend URL in production, or proxy in development
+    return process.env.REACT_APP_API_URL || window.location.origin;
   }
 
   private get baseURL() {
