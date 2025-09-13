@@ -44,6 +44,10 @@ const allowedOrigins = [
   /https:\/\/--[a-zA-Z0-9-]+\.netlify\.app$/, 
   // Add Netlify's main domain pattern
   /https:\/\/[a-zA-Z0-9-]+\.netlify\.app$/,
+  // Add Vercel's domain pattern
+  /https:\/\/[a-zA-Z0-9-]+\.vercel\.app$/,
+  // Add Vercel's team domain pattern
+  /https:\/\/[a-zA-Z0-9-]+-[a-zA-Z0-9-]+\.vercel\.app$/,
 ];
 
 // Add production frontend URL from environment variable if it exists
