@@ -1,0 +1,7 @@
+node_modules
+backend
+.git
+.env
+*.log
+logs
+test-qr.html
