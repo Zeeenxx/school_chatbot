@@ -25,3 +25,6 @@ ngrok.yml
 # IDE specific
 .cursor-settings.json
 .vscode/
+
+.vercel
+.env*.local

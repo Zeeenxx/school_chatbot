@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Chatbot - Test QR Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .qr-container {
+            margin: 30px 0;
+        }
+        .url {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .instructions {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .instructions ol {
+            margin: 10px 0;
+        }
+        .instructions li {
+            margin: 8px 0;
+        }
+        .test-features {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .test-features h3 {
+            color: #ffeb3b;
+            margin-top: 0;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 School Chatbot</h1>
+        <p>Test your deployed application on mobile devices</p>
+        
+        <div class="qr-container">
+            <div id="qrcode"></div>
+        </div>
+        
+        <div class="url">
+            <strong>URL:</strong><br>
+            https://school-chatbot-eel7o9v9f-zenin-team.vercel.app
+        </div>
+        
+        <div class="instructions">
+            <h3>📱 How to Test on Android:</h3>
+            <ol>
+                <li><strong>Connect to different WiFi:</strong> Use mobile data or different WiFi network</li>
+                <li><strong>Scan QR Code:</strong> Use your phone's camera or QR scanner app</li>
+                <li><strong>Or type URL:</strong> Copy the URL above and paste in your browser</li>
+                <li><strong>Test all features:</strong> Follow the test checklist below</li>
+            </ol>
+        </div>
+        
+        <div class="test-features">
+            <h3>✅ Test Checklist:</h3>
+            <div class="feature">
+                <strong>1. Page Loads:</strong> App should load without errors
+            </div>
+            <div class="feature">
+                <strong>2. Chatbot Works:</strong> Try asking "What courses do you offer?"
+            </div>
+            <div class="feature">
+                <strong>3. Admin Login:</strong> Test login functionality
+            </div>
+            <div class="feature">
+                <strong>4. File Upload:</strong> Try uploading an image or document
+            </div>
+            <div class="feature">
+                <strong>5. Mobile Responsive:</strong> Check if UI adapts to phone screen
+            </div>
+            <div class="feature">
+                <strong>6. Network Performance:</strong> Test on different connection speeds
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+            <p>🔗 Backend: https://school-chatbot-5jlz.onrender.com</p>
+            <p>📊 Monitor: Check browser console for any errors</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+        // Generate QR Code
+        const url = 'https://school-chatbot-eel7o9v9f-zenin-team.vercel.app';
+        
+        QRCode.toCanvas(document.getElementById('qrcode'), url, {
+            width: 200,
+            height: 200,
+            color: {
+                dark: '#000000',
+                light: '#FFFFFF'
+            }
+        }, function (error) {
+            if (error) console.error(error);
+            console.log('QR Code generated successfully!');
+        });
+    </script>
+</body>
+</html>
