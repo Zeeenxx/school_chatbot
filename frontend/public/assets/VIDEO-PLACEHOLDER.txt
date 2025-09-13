@@ -19,3 +19,4 @@ Once you add the files, the video background will automatically work!
 - **Image**: JPG/PNG format, 1920x1080 recommended
 
 See VIDEO-BACKGROUND-GUIDE.md for detailed instructions.
+

@@ -100,3 +100,4 @@ The video background includes:
 - School building exteriors
 
 Remember: Keep the video content professional and relevant to your educational institution!
+

@@ -1,0 +1,18 @@
+# Vercel Environment Variables Template
+# Copy these variables and set them in your Vercel dashboard
+
+# Required Variables
+GEMINI_API_KEY=your_gemini_api_key_here
+JWT_SECRET=your_jwt_secret_here
+NODE_ENV=production
+
+# Optional Variables
+FRONTEND_URL=https://your-app-name.vercel.app
+DATABASE_URL=your_database_url_here
+
+# Instructions:
+# 1. Go to your Vercel project dashboard
+# 2. Click on "Settings" tab
+# 3. Click on "Environment Variables"
+# 4. Add each variable with its value
+# 5. Make sure to set them for "Production" environment

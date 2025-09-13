@@ -12,7 +12,6 @@ import RegisterForm from './components/RegisterForm';
 import AdminDashboard from './components/AdminDashboard';
 import CampusMap from './components/CampusMap';
 import AnnouncementToast from './components/AnnouncementToast';
-import VideoBackground from './components/VideoBackground';
 import { io } from 'socket.io-client';
 import './App.css';
 import './accessibility.css';
@@ -164,15 +163,6 @@ const AppContent: React.FC = () => {
 
   return (
     <AppContainer theme={currentTheme} isAdminView={currentView === 'admin'}>
-      {/* Video Background - only show on main page, not admin */}
-      {currentView !== 'admin' && (
-        <VideoBackground 
-          videoSrc="/assets/background-video.mp4"
-          fallbackImage="/assets/default-bg.jpg"
-          overlay={true}
-          overlayOpacity={0.4}
-        />
-      )}
     <SocialMediaWrapper>
         <SocialMediaLink 
           href="https://www.facebook.com/osmena.colleges" 
@@ -421,7 +411,7 @@ const AppContainer = styled.div<{ theme: any; isAdminView?: boolean }>`
   background: ${props => 
     props.isAdminView 
       ? props.theme.dashboardBackground 
-      : 'transparent' // Transparent when video background is used
+      : (props.theme.backgroundGradient || props.theme.background)
   };
   display: flex;
   flex-direction: column;
